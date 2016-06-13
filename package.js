@@ -1,7 +1,7 @@
 Package.describe({
-  name: 'klokie:drupal-ddp',
+  name: 'hb5:drupal-ddp',
   summary: 'Drupal and Meteor integration over DDP',
-  git: 'https://github.com/klokie/drupal-ddp',
+  git: 'https://github.com/hb5co/drupal-ddp',
   version: '0.1.4'
 });
 
@@ -16,7 +16,7 @@ Package.onUse(function(api) {
     'mongo',
     'accounts-password',
     'http'
-  ], both);
+    ], both);
 
   // Packages for Server.
   api.use('matteodem:server-session@0.4.2', 'server');
@@ -24,18 +24,18 @@ Package.onUse(function(api) {
   // Files for Client.
   api.addFiles([
     'client/methods.js',
-  ], both);
+    ], both);
 
   // Files for Client & Server.
   api.addFiles([
     'collections/taxonomies.js',
-  ], both);
+    ], both);
 
   // Files for Server.
   api.addFiles([
     'server/methods.js',
     'server/config.js'
-  ], 'server');
+    ], 'server');
 
   // Publish Collections to Client.
   api.export('drupalDdpTaxonomies');
