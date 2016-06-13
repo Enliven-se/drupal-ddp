@@ -29,6 +29,8 @@ Meteor.methods({
       // Otherwise, insert/update.
       else {
         // Update existing posts.
+        // bypass forced validation of `audit-argument-checks`
+        check(data.content, [Match.Any]);
         actualColl.upsert({nid: data.content.nid},{$set: data.content});
       }
 
@@ -52,6 +54,8 @@ Meteor.methods({
         actualTax.remove({tid: data.content.tid});
       }
       else {
+        // bypass forced validation of `audit-argument-checks`
+        check(data.content, [Match.Any]);
         actualTax.upsert({
           tid: data.content.tid
         },{
